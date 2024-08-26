@@ -1,0 +1,11 @@
+Welcome to Bem's Help Manual, this is the main sector, for more specific help, type "help -[sector]" for each sector (ex help -edit)
+
+List of commands:
+
+|openFolder -path (open and show every file on a folder)
+|edit -path (opens a file for editing mode)
+|makeFile -directoryPath -newFileName (creates a file in the desired directory), alias mkfile
+|makeDir -directoryPath -newDirectoryname (creates a directory inside another diretory), alias mkdir
+|copyFile -originalPath -newPath (copies a file into a new path)
+|copyDir - originalPath -newPath (copies a directory and it's contents into a new path)
+
