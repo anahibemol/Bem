@@ -1,3 +1,5 @@
+using System.Reflection.Metadata;
+
 namespace Bem
 {
     class Actions
@@ -22,11 +24,24 @@ namespace Bem
                 Console.WriteLine(pathContent[i]);
                 i++;
             }
-            
+                
             Console.ReadLine();
         }
+    
+        public static void Edit(string path)
+        { 
+            Console.WriteLine("Write the text input you want to add to the document");
+            string? desiredText = Console.ReadLine();
+            Console.WriteLine("Write the number of the line you want to replace");
+            int Line = Convert.ToInt16(Console.ReadLine()) -1;
+            if (desiredText is not null && Line > 0)
+            {
+            string[] file = File.ReadAllLines(path);
+            file = file.Select((x, i) => i == Line ? x = desiredText : x).ToArray();
+            File.WriteAllLines(path, file);
+            }
 
-
+        }
         private static string bufferSizeSwitch(int bufferSize) =>
         bufferSize switch
         {
